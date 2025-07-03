@@ -176,3 +176,22 @@ footer { padding: 3rem 0; margin-top: 2rem; border-top: 1px solid var(--border-c
     #go-up-button { background-color: var(--content-bg); color: var(--text-primary); }
     #go-up-button:hover { background-color: #4A5568; }
 }
+
+/* --- Final Fix for Images in Lists --- */
+.post-body ol li img,
+.post-body ul li img {
+    margin-top: 1rem; /* Adds space above the image */
+    max-width: calc(100% + 3rem); /* Allows image to break out of the li indent */
+    margin-left: -3rem; /* Pulls the image back to align with the left edge */
+}
+
+@media (max-width: 500px) {
+    .post-body ol, .post-body ul {
+        padding-left: 1.5rem; /* Reduce list indent on very small screens */
+    }
+    .post-body ol li img,
+    .post-body ul li img {
+        max-width: calc(100% + 1.5rem);
+        margin-left: -1.5rem;
+    }
+}
