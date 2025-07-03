@@ -60,7 +60,8 @@ a:hover { text-decoration: underline; }
 /* --- Blog Post Grid & Card Styling --- */
 .post-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Creates responsive columns */
+    /* THE FIX: Changed minmax from 350px to 300px for better mobile fit */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
 }
 .post-card {
@@ -68,7 +69,7 @@ a:hover { text-decoration: underline; }
     border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    overflow: hidden; /* This is key for the image corners */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -86,7 +87,7 @@ a:hover { text-decoration: underline; }
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Makes the content area fill the card */
+    flex-grow: 1;
 }
 .card-content h2 {
     font-size: 1.5rem;
@@ -96,7 +97,7 @@ a:hover { text-decoration: underline; }
 .card-content .excerpt {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    flex-grow: 1; /* Pushes the metadata to the bottom */
+    flex-grow: 1;
 }
 .card-metadata {
     display: flex;
@@ -106,15 +107,13 @@ a:hover { text-decoration: underline; }
     color: var(--text-secondary);
     border-top: 1px solid var(--border-color);
     padding-top: 1.5rem;
-    margin-top: auto; /* Aligns to the bottom */
+    margin-top: auto;
 }
 .card-metadata .author-image { width: 24px; height: 24px; border-radius: 50%; }
 
-/* --- Article Tags --- */
+/* --- Other page styles... --- */
 .tag-list { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
 .tag { font-size: 0.8rem; background-color: #F7FAFC; border: 1px solid var(--border-color); padding: 0.25rem 0.75rem; border-radius: 16px; font-weight: 500; }
-
-/* --- Single Post Page & Other Styles (No Changes) --- */
 .post-header { text-align: left; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; }
 .post-header .author-info { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .post-header .author-image { width: 48px; height: 48px; border-radius: 50%; }
