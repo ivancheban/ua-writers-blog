@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to connect MadCap Flare to Git</title>
+    <link rel="icon" href="../favicon.ico?v=2" sizes="any">
+    <!-- Font Awesome CDN for the Telegram icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css?v=10">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="../logo.svg" alt="UA Writers' Blog Logo">
+                </a>
+                <div class="header-controls">
+                    <div class="header-right">
+                        <nav class="navigation">
+                            <a href="/" class="active">Blog</a>
+                            <a href="/about.html">About us</a>
+                            <a href="/contribute.html" class="button">Contribute</a>
+                        </nav>
+                    </div>
+                    <div class="lang-switcher">
+                        <a href="#" class="active">EN</a>
+                        <a href="/uk/posts/how-to-connect-madcap-flare-to-git.html">UK</a>
+                    </div>
+                    <button class="mobile-menu-toggle" aria-label="Open menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <header class="post-header">
+                <div class="author-info">
+                    <img src="../ivan-cheban.jpg" alt="Ivan Cheban" class="author-image">
+                    <div>
+                        <div class="author-name">Ivan Cheban</div>
+                        <div class="post-date">October 25, 2023</div>
+                    </div>
+                </div>
+                <h1>How to connect MadCap Flare to Git</h1>
+                <div class="tag-list">
+                    <span class="tag">Tech Writing</span>
+                    <span class="tag">Tools</span>
+                </div>
+            </header>
+            
+            <img src="../img/connect-madcap-git.webp" alt="Connecting MadCap Flare to Git" class="post-banner-image">
+
+            <div class="post-body">
+                <article>
+                    <p>Our goal is to connect your MadCap Flare project to a repository in GitHub or GitLab. After connecting your project to Git, you will be able to commit all your changes to Git and sync this repository with any MadCap Flare project.</p>
+                    <h2>Bind local MadCap project to GitHub</h2>
+                    <blockquote>
+                        <p>In this scenario, you have a local MadCap Flare project on your computer. You want to bind this project to the repository in GitHub. Binding means connecting, uploading, or syncing the local files with the remote repository in the GitHub web interface.</p>
+                    </blockquote>
+                    <img src="../img/flare-git.png" alt="Connect MadCap project to GitHub repository">
+                    <h3 id="bind-using-the-flare-interface">Bind using the Flare interface</h3>
+                    <p>To bind your MadCap Flare project to the GitHub repository:</p>
+                    <ol>
+                        <li>Create a new (empty) GitHub repository. <br> <img src="../img/new-github-repo.png" alt="New GitHub repository"></li>
+                        <li>Copy the link to your new and empty repository. <br> <img src="../img/github-repo-link.png" alt="Copy the link to the repository"></li>
+                        <li>In your MadCap Flare, open <strong>Project</strong> > <strong>Project Properties</strong> > <strong>Source Control</strong> > <strong>Bind Project</strong>. <br> <img src="../img/project-properties.png" alt="MadCap project properties"></li>
+                        <li>Select <strong>Git</strong> as your source control provider.</li>
+                        <li>Select the <strong>Remote Repository</strong> checkbox.</li>
+                        <li>Select the <strong>Push on bind</strong> checkbox.</li>
+                        <li>Paste the link to your repository.</li>
+                        <li>Enter your name, email address, and click OK. <br> <img src="../img/bind-project.png" alt="Bind project"></li>
+                        <li>Review the details of your bound project and click OK to close the menu. <br> <img src="../img/bound-project.png" alt="Bound project"></li>
+                    </ol>
+                    <p>Go to your GitHub repository and refresh the page to see the changes.</p>
+                    <img src="../img/madcap-project-repo.png" alt="MadCap project repository changes">
+                    <p>Your local project has been uploaded to your empty GitHub repository. Now you can change the local files in your MadCap project, commit the changes and push them to this remote repository.</p>
+                    <h3>Upload your Madcap project to GitHub using VS Code</h3>
+                    <blockquote>
+                        <p>You must have GitHub account and VS Code installed.</p>
+                    </blockquote>
+                    <p>To connect your local MadCap project to a new GitHub repository in Visual Studio Code:</p>
+                    <ol>
+                        <li>Open your Flare project folder in VS Code. <br> <img src="../img/open-folder-vscode.png" alt="Open folder in VS Code"> <img src="../img/select-folder.png" alt="Select folder"></li>
+                        <li>Select the Source Control tab from the side panel or click <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>.</li>
+                        <li>Select <strong>Publish to GitHub</strong>. <br> <img src="../img/publish-github.png" alt="Publish to GitHub"></li>
+                        <li>Select <strong>Publish to GitHub public repository</strong> and click OK. <br> <img src="../img/public-repo.png" alt="Publish to public repository"></li>
+                        <li>Select <strong>Open on GitHub</strong> in the bottom left corner of the screen. <br> <img src="../img/open-github.png" alt="Open on GitHub"></li>
+                    </ol>
+                    <p>You can go to your GitHub repositories and find your new repo.</p>
+                    <img src="../img/github-repos.png" alt="GitHub repositories">
+                    <p>Now, your local MadCap project is synced with this GitHub repository. You can use your VS Code to commit and push all your changes in this project.</p>
+                    <img src="../img/changes-vscode.png" alt="Changes in VS Code">
+                    <p>If you want to use Flare's interface for Git operations, you need to bind it to a new repository as in <a href="#bind-using-the-flare-interface">Bind using the Flare interface</a>.</p>
+                    <h3>Import an existing MadCap project from Git</h3>
+                    <p>To import an existing MadCap Flare project from the GitHub or GitLab repository:</p>
+                    <ol>
+                        <li>Go to the GitHub or GitLab repository containing the MadCap Flare project you want to import. For example: https://github.com/ivancheban/Sample.</li>
+                        <li>Copy the HTTPS link to this repository. For example: https://github.com/ivancheban/Sample.git <br> <img src="../img/copy-link.png" alt="Copy link to the repository"></li>
+                        <li>In MadCap Flare, select <strong>File</strong> > <strong>New Project</strong> > <strong>Import From Source Control</strong>. <br> <img src="../img/import-source-control.png" alt="Import from Source Control"></li>
+                        <li>Paste the HTTPS link to your GitHub or GitLab repository ending in .git and click Next. <br> <img src="../img/select-source-control.png" alt="Select source control"></li>
+                        <li>Click Browse, select the MadCap Flare project file in the remote repository, and click OK. <br> <img src="../img/select-project-file.png" alt="Select project file"></li>
+                        <li>Click Next and Finish. <br> <img src="../img/finish-import.png" alt="Finish importing"></li>
+                    </ol>
+                    <p>As a result, your MadCap project from GitHub or GitLab is imported locally on your computer. This MadCap project is now bound or connected to your remote repository. You can start changing the files locally, committing and pushing the changes to the remote repository.</p>
+                    <h2>Connect MadCap Flare project to Git</h2>
+                    <blockquote>
+                        <p>This is the video on YouTube where I show how to connect your local MadCap Flare project to the GitHub repository.</p>
+                    </blockquote>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/8TDqoyx_Wa8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <button id="go-up-button" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M11.9999 10.8284L7.05016 15.7782L5.63595 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z"></path></svg>
+    </button>
+    <footer>
+        <div class="container">
+            <p class="footer-support">We stand with Ukraine. You can support Ukraine by donating to this <a href="https://savelife.in.ua/" target="_blank" rel="noopener noreferrer">trustworthy fund</a>.</p>
+            <p class="footer-telegram">Follow us on <a href="https://t.me/+VpNHhFrInNOeWkDD" target="_blank" rel="noopener noreferrer">Telegram</a> <i class="fa-brands fa-telegram"></i></p>
+            <p class="copyright">©2024 Ukrainian Writers' Space. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        'use strict';
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const headerRight = document.querySelector('.header-right');
+            if (menuToggle && headerRight) {
+                const navLinks = headerRight.querySelectorAll('.navigation a');
+                menuToggle.addEventListener('click', () => {
+                    headerRight.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (headerRight.classList.contains('active')) {
+                            headerRight.classList.remove('active');
+                            menuToggle.classList.remove('active');
+                        }
+                    });
+                });
+            }
+            const goUpButton = document.getElementById('go-up-button');
+            if (goUpButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) { goUpButton.classList.add('is-visible'); } 
+                    else { goUpButton.classList.remove('is-visible'); }
+                });
+                goUpButton.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            }
+        });
+    </script>
+</body>
+</html>

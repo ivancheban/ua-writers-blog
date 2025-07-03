@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Як опублікувати - Ukrainian Writers' Space</title>
+    <link rel="icon" href="../favicon.ico?v=2" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css?v=10">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/uk/" class="logo">
+                    <img src="../logo.svg" alt="Логотип">
+                </a>
+                <div class="header-controls">
+                    <div class="header-right">
+                        <nav class="navigation">
+                            <a href="/uk/">Блог</a>
+                            <a href="/uk/about.html">Про нас</a>
+                            <a href="/uk/contribute.html" class="button active">Як опублікувати</a>
+                        </nav>
+                    </div>
+                    <div class="lang-switcher">
+                        <a href="/contribute.html">EN</a>
+                        <a href="#" class="active">UK</a>
+                    </div>
+                    <button class="mobile-menu-toggle" aria-label="Відкрити меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container form-container">
+            <h1 class="page-title">Запропонуйте статтю</h1>
+            <p class="form-intro">Маєте ідею для статті? Ми будемо раді її почути! Заповніть форму нижче, щоб зв'язатися з нами.</p>
+            <form name="contribution-uk" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contribution-uk" />
+                <div class="form-group">
+                    <label for="name">Ваше ім'я</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Ваш Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваша ідея</label>
+                    <textarea id="message" name="message" rows="7" required></textarea>
+                </div>
+                <button type="submit" class="button">Надіслати</button>
+            </form>
+        </div>
+    </main>
+    <button id="go-up-button" title="Нагору">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M11.9999 10.8284L7.05016 15.7782L5.63595 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z"></path></svg>
+    </button>
+    <footer>
+        <div class="container">
+            <p class="footer-support">Ми з України. Підтримайте Україну, зробивши пожертву в цей <a href="https://savelife.in.ua/" target="_blank" rel="noopener noreferrer">надійний фонд</a>.</p>
+            <p class="footer-telegram">Слідкуйте за нами в <a href="https://t.me/+VpNHhFrInNOeWkDD" target="_blank" rel="noopener noreferrer">Телеграмі</a> <i class="fa-brands fa-telegram"></i></p>
+            <p class="copyright">©2024 Ukrainian Writers' Space. Усі права застережено.</p>
+        </div>
+    </footer>
+    <script>
+        'use strict';
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const headerRight = document.querySelector('.header-right');
+            if (menuToggle && headerRight) {
+                const navLinks = headerRight.querySelectorAll('.navigation a');
+                menuToggle.addEventListener('click', () => {
+                    headerRight.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (headerRight.classList.contains('active')) {
+                            headerRight.classList.remove('active');
+                            menuToggle.classList.remove('active');
+                        }
+                    });
+                });
+            }
+            const goUpButton = document.getElementById('go-up-button');
+            if (goUpButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) { goUpButton.classList.add('is-visible'); } 
+                    else { goUpButton.classList.remove('is-visible'); }
+                });
+                goUpButton.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            }
+        });
+    </script>
+</body>
+</html>

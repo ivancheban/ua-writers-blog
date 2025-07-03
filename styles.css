@@ -1,0 +1,193 @@
+/* --- Font Import & Basic Setup --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --bg-color: #FFFFFF;
+    --content-bg: #FFFFFF;
+    --text-primary: #1A202C;
+    --text-secondary: #718096;
+    --border-color: #E2E8F0;
+    --accent-color: #2D3748;
+    --accent-orange: #DE6209;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+main { padding: 3rem 0; }
+a { color: var(--text-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- Header --- */
+.header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+    position: relative;
+    z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo img { height: 40px; display: block; }
+.header-controls { display: flex; align-items: center; gap: 1.5rem; }
+.header-right { display: flex; align-items: center; }
+.navigation { display: flex; align-items: center; gap: 2rem; }
+.navigation a { font-weight: 500; color: var(--text-secondary); transition: color 0.2s; }
+.navigation a:hover, .navigation a.active { color: var(--text-primary); text-decoration: none; }
+.navigation .button { background-color: var(--accent-color); color: white; padding: 0.6rem 1.2rem; border-radius: 8px; }
+.navigation a.button:hover, .navigation a.button.active { color: white; text-decoration: none; }
+
+/* --- Language Switcher --- */
+.lang-switcher { display: flex; align-items: center; gap: 0.5rem; padding-left: 1.5rem; border-left: 1px solid var(--border-color); }
+.lang-switcher a { font-weight: 500; color: var(--text-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; }
+.lang-switcher a.active { color: var(--text-primary); background-color: #F7FAFC; }
+
+/* --- Mobile Menu Button --- */
+.mobile-menu-toggle { display: none; flex-direction: column; justify-content: space-around; width: 24px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; }
+.mobile-menu-toggle span { width: 24px; height: 2px; background-color: var(--text-primary); border-radius: 2px; transition: all 0.3s ease; }
+
+/* --- Page Titles --- */
+.page-title, .about-header h1 { font-size: 2.5rem; color: var(--accent-orange); margin-bottom: 2rem; }
+
+/* --- Blog Post Grid & Card Styling --- */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Creates responsive columns */
+    gap: 2.5rem;
+}
+.post-card {
+    background-color: var(--content-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow: hidden; /* This is key for the image corners */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+.post-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Makes the content area fill the card */
+}
+.card-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+.card-content .excerpt {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes the metadata to the bottom */
+}
+.card-metadata {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: auto; /* Aligns to the bottom */
+}
+.card-metadata .author-image { width: 24px; height: 24px; border-radius: 50%; }
+
+/* --- Article Tags --- */
+.tag-list { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
+.tag { font-size: 0.8rem; background-color: #F7FAFC; border: 1px solid var(--border-color); padding: 0.25rem 0.75rem; border-radius: 16px; font-weight: 500; }
+
+/* --- Single Post Page & Other Styles (No Changes) --- */
+.post-header { text-align: left; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+.post-header .author-info { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.post-header .author-image { width: 48px; height: 48px; border-radius: 50%; }
+.post-header .author-name { font-weight: 500; }
+.post-header .post-date { color: var(--text-secondary); font-size: 0.9rem; }
+.post-header h1 { font-size: 2.75rem; margin-bottom: 1rem; line-height: 1.2; color: var(--text-primary); }
+.post-banner-image { width: 100%; max-width: 900px; display: block; margin-left: auto; margin-right: auto; border-radius: 12px; margin-bottom: 2rem; }
+.post-body { font-size: 1.125rem; max-width: 700px; margin: 0 auto; }
+.post-body h2 { font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+.post-body h3 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem; }
+.post-body ol, .post-body ul { padding-left: 2rem; margin-bottom: 1.5rem; }
+.post-body li { margin-bottom: 0.75rem; }
+.post-body blockquote { border-left: 3px solid var(--accent-color); margin: 1.5rem 0; padding: 0.5rem 1.5rem; font-style: italic; background-color: #F7FAFC; }
+.post-body kbd { background-color: #E2E8F0; padding: 2px 6px; border-radius: 4px; font-family: monospace; border: 1px solid #CBD5E0; }
+.post-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 2rem 0; }
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0; border-radius: 8px; }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.about-section { padding: 2rem 0; }
+.about-section .container { max-width: 800px; }
+.about-header { text-align: center; margin-bottom: 3rem; }
+.about-header p { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+.author-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; justify-content: center; }
+.author-card { text-align: center; }
+.author-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
+.author-card h3 { font-size: 1.25rem; margin-bottom: 0.25rem; }
+.author-card p { color: var(--text-secondary); }
+.form-container { max-width: 650px; margin: 0 auto; }
+.form-container .page-title { text-align: center; }
+.form-intro { text-align: center; font-size: 1.1rem; color: var(--text-secondary); margin: -1rem auto 3rem auto; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 0.5rem; }
+.form-group input, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; font-family: 'Inter', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(45, 55, 72, 0.1); }
+form .button { width: 100%; font-size: 1rem; padding: 0.9rem; font-weight: 700; background-color: var(--accent-color); color: white; }
+form .button:hover { background-color: #1A202C; }
+footer { padding: 3rem 0; margin-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+.footer-support { margin-bottom: 1.5rem; }
+.footer-telegram { display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+.footer-telegram i { font-size: 1.2rem; margin-left: 0.2rem; }
+.copyright { font-size: 0.85rem; }
+#go-up-button { display: flex; align-items: center; justify-content: center; position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: var(--accent-color); color: white; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; }
+#go-up-button.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+#go-up-button:hover { background-color: #1A202C; }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .header-right { display: none; }
+    .mobile-menu-toggle { display: flex; }
+    .lang-switcher { border-left: none; padding-left: 0; }
+    .header-right.active {
+        display: flex; position: absolute; top: 100%; left: 0; width: 100%;
+        background-color: var(--bg-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 1rem 0; flex-direction: column;
+    }
+    .header-right.active .navigation { flex-direction: column; width: 100%; gap: 0; }
+    .header-right.active .navigation a { width: 100%; text-align: center; padding: 1rem; }
+    .header-right.active .navigation a.button { background-color: transparent; color: var(--text-secondary); font-weight: 500; }
+    .header-right.active .navigation a.button.active { color: var(--text-primary); }
+}
+
+/* --- Dark Mode Styles --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1A202C; --content-bg: #2D3748; --text-primary: #EDF2F7;
+        --text-secondary: #A0AEC0; --border-color: #4A5568; --accent-color: #EDF2F7;
+    }
+    .logo img { filter: brightness(0) invert(1); }
+    .mobile-menu-toggle span { background-color: var(--text-primary); }
+    .navigation .button { background-color: var(--accent-color); color: #1A202C; }
+    .tag, .lang-switcher a.active { background-color: var(--content-bg); }
+    .post-body blockquote { background-color: #1A202C; }
+    form .button { background-color: var(--accent-color); color: #1A202C; }
+    form .button:hover { background-color: #CBD5E0; }
+    #go-up-button { background-color: var(--content-bg); color: var(--text-primary); }
+    #go-up-button:hover { background-color: #4A5568; }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ukrainian Writers' Space</title>
+    <link rel="icon" href="favicon.ico?v=2" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="logo.svg" alt="UA Writers' Blog Logo">
+                </a>
+                <div class="header-controls">
+                    <div class="header-right">
+                        <nav class="navigation">
+                            <a href="/">Blog</a>
+                            <a href="/about.html" class="active">About us</a>
+                            <a href="/contribute.html" class="button">Contribute</a>
+                        </nav>
+                    </div>
+                    <div class="lang-switcher">
+                        <a href="#" class="active">EN</a>
+                        <a href="/uk/about.html">UK</a>
+                    </div>
+                    <button class="mobile-menu-toggle" aria-label="Open menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="about-section">
+            <div class="container">
+                <div class="about-header">
+                    <h1>About us</h1>
+                </div>
+                <div class="post-body" style="max-width: 700px; margin: 0 auto 4rem auto;">
+                    <p>Meet our new platform for technical writers, UX writers, content writers, copywriters, and all other kinds of writers who are eager to share their ideas and expertise in the form of a blog article.</p>
+                    <br>
+                    <p>Dear writers,</p>
+                    <p>We've been nursing the idea of a platform where we could exchange our expertise and advice on different subjects relating to writing for a long time. Finally, the idea has shaped itself into a blog. This blog allows you to publish and edit your posts, read what others write, and add comments or reactions.</p>
+                    <p>You know that we have been talking to each other on <a href="https://t.me/+VpNHhFrInNOeWkDD" target="_blank" rel="noopener noreferrer">Telegram channels for technical writers</a> and <a href="https://t.me/ux_writers_ua" target="_blank" rel="noopener noreferrer">UX writers of Ukraine</a>. Those channels are a good place for communication in real time. This blog is for writing! Yes, we're excited to announce that now you have a space, Ukrainian Writer's Space, where you can actually show your writing and share your ideas.</p>
+                    <br>
+                    <p>Sincerely,<br>Yaroslava Kachan and Ivan Cheban<br>Maintainers of Ukrainian Writers' Space</p>
+                </div>
+                <div class="author-grid">
+                    <div class="author-card">
+                        <img src="ivan-cheban.jpg" alt="Photo of Ivan Cheban">
+                        <h3>Ivan Cheban</h3>
+                        <p>Maintainer of Ukrainian Writers' Space</p>
+                    </div>
+                    <div class="author-card">
+                        <img src="yaroslava-kachan.jpg" alt="Photo of Yaroslava Kachan">
+                        <h3>Yaroslava Kachan</h3>
+                        <p>Maintainer of Ukrainian Writers' Space</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <button id="go-up-button" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M11.9999 10.8284L7.05016 15.7782L5.63595 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z"></path></svg>
+    </button>
+    <footer>
+        <div class="container">
+            <p class="footer-support">We stand with Ukraine. You can support Ukraine by donating to this <a href="https://savelife.in.ua/" target="_blank" rel="noopener noreferrer">trustworthy fund</a>.</p>
+            <p class="footer-telegram">Follow us on <a href="https://t.me/+VpNHhFrInNOeWkDD" target="_blank" rel="noopener noreferrer">Telegram</a> <i class="fa-brands fa-telegram"></i></p>
+            <p class="copyright">©2024 Ukrainian Writers' Space. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        'use strict';
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const headerRight = document.querySelector('.header-right');
+            if (menuToggle && headerRight) {
+                const navLinks = headerRight.querySelectorAll('.navigation a');
+                menuToggle.addEventListener('click', () => {
+                    headerRight.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (headerRight.classList.contains('active')) {
+                            headerRight.classList.remove('active');
+                            menuToggle.classList.remove('active');
+                        }
+                    });
+                });
+            }
+            const goUpButton = document.getElementById('go-up-button');
+            if (goUpButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) { goUpButton.classList.add('is-visible'); } 
+                    else { goUpButton.classList.remove('is-visible'); }
+                });
+                goUpButton.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            }
+        });
+    </script>
+</body>
+</html>
