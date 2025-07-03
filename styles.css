@@ -19,6 +19,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* Failsafe to prevent horizontal scroll */
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
@@ -60,7 +61,8 @@ a:hover { text-decoration: underline; }
 /* --- Blog Post Grid & Card Styling --- */
 .post-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* More flexible grid for smaller phones */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
 }
 .post-card {
@@ -86,7 +88,7 @@ a:hover { text-decoration: underline; }
 .tag { font-size: 0.8rem; background-color: #F7FAFC; border: 1px solid var(--border-color); padding: 0.25rem 0.75rem; border-radius: 16px; font-weight: 500; }
 
 /* --- Single Post Page --- */
-.post-header { text-align: left; margin-bottom: 2rem; } /* Mobile-first styles */
+.post-header { text-align: left; margin-bottom: 2rem; }
 .post-header .author-info { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .post-header .author-image { width: 48px; height: 48px; border-radius: 50%; }
 .post-header .author-name { font-weight: 500; }
@@ -103,8 +105,6 @@ a:hover { text-decoration: underline; }
 .post-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 2rem 0; }
 .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0; border-radius: 8px; }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-/* --- Other page styles --- */
 .about-section { padding: 2rem 0; }
 .about-section .container { max-width: 800px; }
 .about-header { text-align: center; margin-bottom: 3rem; }
@@ -134,22 +134,14 @@ footer { padding: 3rem 0; margin-top: 2rem; border-top: 1px solid var(--border-c
 
 /* --- Desktop-Specific Centering for Articles --- */
 @media (min-width: 769px) {
-    .post-header {
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .post-banner-image {
-        max-width: 900px;
-    }
-    .post-body {
-        max-width: 700px;
-        margin: 0 auto;
-    }
+    .post-header { max-width: 900px; margin-left: auto; margin-right: auto; }
+    .post-banner-image { max-width: 900px; }
+    .post-body { max-width: 700px; margin: 0 auto; }
 }
 
 /* --- Responsive Design for Mobile --- */
 @media (max-width: 768px) {
+    .container { padding: 0 1rem; } /* Reduce side padding on small screens */
     .header-right { display: none; }
     .mobile-menu-toggle { display: flex; }
     .lang-switcher { border-left: none; padding-left: 0; }
