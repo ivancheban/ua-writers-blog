@@ -190,7 +190,6 @@ footer { padding: 3rem 0; margin-top: 2rem; border-top: 1px solid var(--border-c
         --bg-color: #1A202C; --page-bg: #1A202C; --content-bg: #2D3748;
         --text-primary: #EDF2F7; --text-secondary: #A0AEC0; --border-color: #4A5568; --accent-color: #EDF2F7;
     }
-    .logo img { filter: brightness(0) invert(1); }
     .mobile-menu-toggle span { background-color: var(--text-primary); }
     .navigation .button { background-color: var(--accent-color); color: #1A202C; }
     .tag, .lang-switcher a.active { background-color: var(--content-bg); }
