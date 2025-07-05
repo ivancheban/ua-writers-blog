@@ -58,7 +58,65 @@
 
                 <div class="post-body">
                     <article>
-                        <!-- Full article content... -->
+                        <div class="note note-info">
+                            <p>Наша мета — підключити проект MadCap Flare до репозиторія в GitHub. Після підключення вашого проекта до Git, ви зможете передавати всі локальні зміни до Git і синхронізувати цей репозиторій з будь-яким проектом MadCap Flare.</p>
+                        </div>
+                        <h2>Прив'язка локального проекту MadCap до GitHub</h2>
+                        <blockquote>
+                            <p>У цьому сценарії у вас є локальний проект MadCap Flare на вашому комп'ютері. Ви хочете прив'язати цей проект до репозиторію в GitHub. Прив'язка означає підключення, завантаження або синхронізацію локальних файлів з віддаленим репозиторієм у веб-інтерфейсі GitHub.</p>
+                        </blockquote>
+                        <img src="../../img/flare-git.png" alt="Підключення проекту MadCap до репозиторію GitHub">
+                        <h3 id="bind-using-the-flare-interface-uk">Прив'язка через інтерфейс Flare</h3>
+                        <p>Щоб прив'язати ваш проект MadCap Flare до репозиторію GitHub:</p>
+                        <ol>
+                            <li>Створіть новий (порожній) репозиторій у GitHub. <br> <img src="../../img/new-github-repo.png" alt="Новий репозиторій GitHub"></li>
+                            <li>Скопіюйте посилання на ваш новий порожній репозиторій. <br> <img src="../../img/github-repo-link.png" alt="Копіювання посилання на репозиторій"></li>
+                            <li>У вашому MadCap Flare відкрийте <strong>Project</strong> > <strong>Project Properties</strong> > <strong>Source Control</strong> > <strong>Bind Project</strong>. <br> <img src="../../img/project-properties.png" alt="Властивості проекту MadCap"></li>
+                            <li>Виберіть <strong>Git</strong> як ваш провайдер системи контролю версій.</li>
+                            <li>Встановіть прапорець <strong>Remote Repository</strong>.</li>
+                            <li>Встановіть прапорець <strong>Push on bind</strong>.</li>
+                            <li>Вставте посилання на ваш репозиторій.</li>
+                            <li>Введіть ваше ім'я, адресу електронної пошти та натисніть OK. <br> <img src="../../img/bind-project.png" alt="Прив'язка проекту"></li>
+                            <li>Перегляньте деталі вашого прив'язаного проекту та натисніть OK, щоб закрити меню. <br> <img src="../../img/bound-project.png" alt="Прив'язаний проект"></li>
+                        </ol>
+                        <p>Перейдіть до вашого репозиторію GitHub і оновіть сторінку, щоб побачити зміни.</p>
+                        <img src="../../img/madcap-project-repo.png" alt="Зміни в репозиторії проекту MadCap">
+                        <p>Ваш локальний проект було завантажено до вашого порожнього репозиторію GitHub. Тепер ви можете змінювати локальні файли у вашому проекті MadCap, робити коміти та надсилати зміни до цього віддаленого репозиторію.</p>
+                        <h3>Завантаження проекту MadCap до GitHub за допомогою VS Code</h3>
+                        <blockquote>
+                            <p>Ви повинні мати обліковий запис GitHub та встановлений VS Code.</p>
+                        </blockquote>
+                        <p>Щоб підключити ваш локальний проект MadCap до нового репозиторію GitHub у Visual Studio Code:</p>
+                        <ol>
+                            <li>Відкрийте папку вашого проекту Flare у VS Code. <br> <img src="../../img/open-folder-vscode.png" alt="Відкрити папку у VS Code"> <img src="../../img/select-folder.png" alt="Вибрати папку"></li>
+                            <li>Виберіть вкладку Source Control на бічній панелі або натисніть <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>.</li>
+                            <li>Виберіть <strong>Publish to GitHub</strong>. <br> <img src="../../img/publish-github.png" alt="Опублікувати на GitHub"></li>
+                            <li>Виберіть <strong>Publish to GitHub public repository</strong> та натисніть OK. <br> <img src="../../img/public-repo.png" alt="Опублікувати у публічний репозиторій"></li>
+                            <li>Виберіть <strong>Open on GitHub</strong> у нижньому лівому куті екрана. <br> <img src="../../img/open-github.png" alt="Відкрити на GitHub"></li>
+                        </ol>
+                        <p>Ви можете перейти до своїх репозиторіїв GitHub і знайти ваш новий репозиторій.</p>
+                        <img src="../../img/github-repos.png" alt="Репозиторії GitHub">
+                        <p>Тепер ваш локальний проект MadCap синхронізовано з цим репозиторієм GitHub. Ви можете використовувати VS Code, щоб робити коміти та надсилати всі зміни у вашому проекті.</p>
+                        <img src="../../img/changes-vscode.png" alt="Зміни у VS Code">
+                        <p>Якщо ви хочете використовувати інтерфейс Flare для операцій з Git, вам потрібно прив'язати його до нового репозиторію, як описано в розділі <a href="#bind-using-the-flare-interface-uk">Прив'язка через інтерфейс Flare</a>.</p>
+                        <h3>Імпорт існуючого проекту MadCap з Git</h3>
+                        <p>Щоб імпортувати існуючий проект MadCap Flare з репозиторію GitHub або GitLab:</p>
+                        <ol>
+                            <li>Перейдіть до репозиторію GitHub або GitLab, що містить проект MadCap Flare, який ви хочете імпортувати. Наприклад: https://github.com/ivancheban/Sample.</li>
+                            <li>Скопіюйте HTTPS-посилання на цей репозиторій. Наприклад: https://github.com/ivancheban/Sample.git <br> <img src="../../img/copy-link.png" alt="Копіювати посилання на репозиторій"></li>
+                            <li>У MadCap Flare виберіть <strong>File</strong> > <strong>New Project</strong> > <strong>Import From Source Control</strong>. <br> <img src="../../img/import-source-control.png" alt="Імпортувати з системи контролю версій"></li>
+                            <li>Вставте HTTPS-посилання на ваш репозиторій GitHub або GitLab, що закінчується на .git, і натисніть Next. <br> <img src="../../img/select-source-control.png" alt="Вибір системи контролю версій"></li>
+                            <li>Натисніть Browse, виберіть файл проекту MadCap Flare (.flprj) у віддаленому репозиторії та натисніть OK. <br> <img src="../../img/select-project-file.png" alt="Вибір файлу проекту"></li>
+                            <li>Натисніть Next та Finish. <br> <img src="../../img/finish-import.png" alt="Завершення імпорту"></li>
+                        </ol>
+                        <p>У результаті ваш проект MadCap з GitHub або GitLab імпортовано локально на ваш комп'ютер. Цей проект MadCap тепер прив'язаний або підключений до вашого віддаленого репозиторію. Ви можете почати змінювати файли локально, робити коміти та надсилати зміни до віддаленого репозиторію.</p>
+                        <h2>Підключення проекта MadCap Flare до Git (Відео)</h2>
+                        <blockquote>
+                            <p>У цьому відео на YouTube я показую, як підключити ваш локальний проект MadCap Flare до репозиторія в GitHub.</p>
+                        </blockquote>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/8TDqoyx_Wa8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </article>
                 </div>
             </div>
