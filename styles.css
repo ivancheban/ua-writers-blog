@@ -65,6 +65,10 @@ a:hover { text-decoration: underline; }
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
 }
+.tag-page-grid {
+    max-width: 850px;
+    margin: 0 auto;
+}
 .post-card {
     background-color: var(--content-bg);
     border: 1px solid var(--border-color);
@@ -82,6 +86,23 @@ a:hover { text-decoration: underline; }
 .card-content .excerpt { color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1; }
 .card-metadata { display: flex; align-items: center; gap: 1.5rem; font-size: 0.875rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 1.5rem; margin-top: auto; }
 .card-metadata .author-image { width: 24px; height: 24px; border-radius: 50%; }
+
+/* --- Article Tags --- */
+.tag-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; }
+.tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    background-color: #F7FAFC;
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+.tag:hover {
+    background-color: #E2E8F0;
+    text-decoration: none;
+}
 
 /* --- Article & Page Content Container --- */
 .article-container {
@@ -184,8 +205,7 @@ footer { padding: 3rem 0; margin-top: 2rem; border-top: 1px solid var(--border-c
         --bg-color: #1A202C; --page-bg: #1A202C; --content-bg: #2D3748;
         --text-primary: #EDF2F7; --text-secondary: #A0AEC0; --border-color: #4A5568; --accent-color: #EDF2F7;
     }
-    /* THE FIX: This rule is now empty, so no filter will be applied. */
-    .logo img {}
+    .logo img { /* Intentionally blank to prevent inversion */ }
     .mobile-menu-toggle span { background-color: var(--text-primary); }
     .navigation .button { background-color: var(--accent-color); color: #1A202C; }
     .tag, .lang-switcher a.active { background-color: var(--content-bg); }
