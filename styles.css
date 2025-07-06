@@ -190,3 +190,19 @@ footer { padding: 3rem 0; margin-top: 2rem; border-top: 1px solid var(--border-c
     #go-up-button:hover { background-color: #4A5568; }
     .success-card .button:hover { background-color: #4A5568; border-color: #4A5568; }
 }
+
+/* --- Styles for Side-by-Side Image Comparison --- */
+.image-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 1rem;
+    align-items: start;
+    margin: 2rem 0;
+}
+
+/* On mobile, stack the images vertically */
+@media (max-width: 600px) {
+    .image-comparison {
+        grid-template-columns: 1fr;
+    }
+}
