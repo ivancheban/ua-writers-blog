@@ -6,7 +6,7 @@
     <title>Як опублікувати - Ukrainian Writers' Space</title>
     <link rel="icon" href="../favicon.ico?v=2" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="../styles.css?v=10">
+    <link rel="stylesheet" href="../styles.css?v=11">
 </head>
 <body>
     <header class="header">
@@ -40,8 +40,12 @@
         <div class="container form-container">
             <h1 class="page-title">Запропонуйте статтю</h1>
             <p class="form-intro">Маєте ідею для статті? Ми будемо раді її почути! Заповніть форму нижче, щоб зв'язатися з нами.</p>
-            <form name="contribution-uk" method="POST" data-netlify="true">
+            
+            <form name="contribution-uk" method="POST" action="/uk/success.html" data-netlify="true" data-netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contribution-uk" />
+                <p class="hidden">
+                    <label>Не заповнюйте це, якщо ви людина: <input name="bot-field" /></label>
+                </p>
                 <div class="form-group">
                     <label for="name">Ваше ім'я</label>
                     <input type="text" id="name" name="name" required>
@@ -65,7 +69,7 @@
         <div class="container">
             <p class="footer-support">Ми з України. Підтримайте Україну, зробивши пожертву в цей <a href="https://savelife.in.ua/" target="_blank" rel="noopener noreferrer">надійний фонд</a>.</p>
             <p class="footer-telegram">Слідкуйте за нами в <a href="https://t.me/+VpNHhFrInNOeWkDD" target="_blank" rel="noopener noreferrer">Телеграмі</a> <i class="fa-brands fa-telegram"></i></p>
-            <p class="copyright">©2025 Ukrainian Writers' Space. Усі права застережено.</p>
+            <p class="copyright">©2024 Ukrainian Writers' Space. Усі права застережено.</p>
         </div>
     </footer>
     <script>

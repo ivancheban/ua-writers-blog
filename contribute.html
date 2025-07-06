@@ -6,7 +6,7 @@
     <title>Contribute - Ukrainian Writers' Space</title>
     <link rel="icon" href="favicon.ico?v=2" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
     <header class="header">
@@ -40,8 +40,12 @@
         <div class="container form-container">
             <h1 class="page-title">Contribute an article</h1>
             <p class="form-intro">Have an idea for a post? We'd love to hear from you! Fill out the form below to get in touch.</p>
-            <form name="contribution" method="POST" data-netlify="true">
+            
+            <form name="contribution" method="POST" action="/success.html" data-netlify="true" data-netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contribution" />
+                <p class="hidden">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
                 <div class="form-group">
                     <label for="name">Your name</label>
                     <input type="text" id="name" name="name" required>
@@ -65,7 +69,7 @@
         <div class="container">
             <p class="footer-support">We stand with Ukraine. You can support Ukraine by donating to this <a href="https://savelife.in.ua/" target="_blank" rel="noopener noreferrer">trustworthy fund</a>.</p>
             <p class="footer-telegram">Follow us on <a href="https://t.me/+VpNHhFrInNOeWkDD" target="_blank" rel="noopener noreferrer">Telegram</a> <i class="fa-brands fa-telegram"></i></p>
-            <p class="copyright">©2025 Ukrainian Writers' Space. All rights reserved.</p>
+            <p class="copyright">©2024 Ukrainian Writers' Space. All rights reserved.</p>
         </div>
     </footer>
     <script>
